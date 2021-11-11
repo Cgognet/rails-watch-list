@@ -1,1 +1,18 @@
-<%=@list.name%>
+<div class="container">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @list.image_url %>');">
+    <span><%=@list.name%></span>
+  </div>
+</div>
+
+<%= link_to %>
+<div class="container">
+  <% @list.bookmarks.each do |bookmark|%>
+    <div class="cards">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= bookmark.movie.poster_url %>')">
+        <%= bookmark.movie.title %> <%= bookmark.movie.rating %>
+        <%= bookmark.comment%>
+      </div>
+    </div>
+
+  <% end %>
+</div>
