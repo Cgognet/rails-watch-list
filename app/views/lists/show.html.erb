@@ -22,7 +22,7 @@
 </div>
 
 <div class="container">
-  <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @list.image_url %>');">
+  <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key if @list.photo.attached?%>');">
     <span><%=@list.name%></span>
   </div>
 </div>
@@ -31,7 +31,7 @@
 <div class="container-card">
   <% @list.bookmarks.each do |bookmark|%>
       <div class="card-trip">
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= bookmark.movie.poster_url %>')">
+        <div class="card-movie" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= bookmark.movie.poster_url %>')">
         </div>
         <div class="card-trip-infos">
           <div>
