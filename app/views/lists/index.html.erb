@@ -1,3 +1,28 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag "popcornfood_122741.png" %>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "My list", lists_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "New list", new_list_path, class: "nav-link" %>
+      </li>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.w600.comps.canstockphoto.fr/banner-film-cin%C3%A9ma-retro-fond-clipart-vecteur_csp54432003.jpg);">
+</div>
+
 <div class="container">
   <h1> My lists </h1>
   <%= link_to 'Create a movie list', new_list_path, class: "btn btn-primary" %>
@@ -6,8 +31,8 @@
   <div class="container">
     <div class="cards">
       <% @lists.each do |list| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= list.image_url %>')">
-          <span><%=list.name%></span>
+        <div class="card-movie" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= list.image_url %>')">
+          <%= link_to list.name, list_path(list) %>
         </div>
       <% end %>
     </div>
